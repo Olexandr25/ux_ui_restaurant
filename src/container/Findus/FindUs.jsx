@@ -8,7 +8,7 @@ const FindUs = () => (
     <div className='app__wrapper_info'>
       <SubHeading title='Contact' />
       <h1 className='headtext__cormorant' style={{ marginBottom: '3rem' }}>
-        Find Us
+        Book Your Experience
       </h1>
       <div className='app__wrapper-content'>
         <p className='p__opensans'>
@@ -19,12 +19,17 @@ const FindUs = () => (
           style={{ color: '#DCCA87', margin: '2rem 0' }}>
           Opening Hours
         </p>
-        <p className='p__opensans'>Mon - Fri: 10:00 am - 02:00 am</p>
-        <p className='p__opensans'>Sat - Sun: 10:00 am - 03:00 am</p>
+        <p className='p__opensans'>Mon - Thu: 5:30 pm - 11:00 pm</p>
+        <p className='p__opensans'>Fri - Sun: 5:00 pm - 12:00 am</p>
       </div>
-      <button className='custom__button' style={{ marginTop: '2rem' }}>
+      <a
+        href='https://maps.google.com/?q=Lane+Ends+Bungalow+Whatcroft+Hall+Lane+Rudheath+CW9+7SG'
+        target='_blank'
+        rel='noreferrer'
+        className='custom__button'
+        style={{ marginTop: '2rem' }}>
         Visit Us
-      </button>
+      </a>
     </div>
 
     <div className='app__wrapper_img'>

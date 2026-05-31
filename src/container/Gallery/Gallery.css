@@ -80,9 +80,16 @@
   justify-content: space-between;
   align-items: center;
 
-  padding-inline-start: 0 1rem;
+  padding: 0 1rem;
   position: absolute;
   bottom: 5%;
+}
+
+.gallery__arrow-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
 }
 
 .gallery__arrow-icon {

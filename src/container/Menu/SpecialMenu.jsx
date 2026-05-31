@@ -7,7 +7,7 @@ import './SpecialMenu.css';
 const SpecialMenu = () => (
   <div className="app__specialMenu flex__center section__padding" id="menu">
     <div className="app__specialMenu-title">
-      <SubHeading title="Menu that fits your palatte" />
+      <SubHeading title="Menu crafted for refined tastes" />
       <h1 className="headtext__cormorant">Today&apos;s Special</h1>
     </div>
 
@@ -36,7 +36,7 @@ const SpecialMenu = () => (
     </div>
 
     <div style={{ marginTop: 15 }}>
-      <button type="button" className="custom__button">View More</button>
+      <a href="#contact" className="custom__button">Reserve a Table</a>
     </div>
   </div>
 );

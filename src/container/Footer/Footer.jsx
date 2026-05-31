@@ -35,9 +35,15 @@ const Footer = () => (
         />
 
         <div className='app__footer-links_icons'>
-          <FiFacebook />
-          <FiTwitter />
-          <FiInstagram />
+          <a href='https://facebook.com' target='_blank' rel='noreferrer' aria-label='Visit Facebook profile'>
+            <FiFacebook />
+          </a>
+          <a href='https://x.com' target='_blank' rel='noreferrer' aria-label='Visit X profile'>
+            <FiTwitter />
+          </a>
+          <a href='https://instagram.com' target='_blank' rel='noreferrer' aria-label='Visit Instagram profile'>
+            <FiInstagram />
+          </a>
         </div>
       </div>
 
@@ -51,7 +57,7 @@ const Footer = () => (
     </div>
 
     <div className='footer__copyright'>
-      <p className='p__opensans'>2023 Gerícht. All Rights reserved.</p>
+      <p className='p__opensans'>2026 Gerícht. All Rights reserved.</p>
     </div>
     
   </div>

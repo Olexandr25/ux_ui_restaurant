@@ -21,10 +21,16 @@ const Gallery = () => {
   const scroll = direction => {
     const { current } = scrollRef
 
+    if (!current) {
+      return
+    }
+
+    const delta = Math.round(current.clientWidth * 0.7)
+
     if (direction === 'left') {
-      current.scrollLeft -= 300
+      current.scrollBy({ left: -delta, behavior: 'smooth' })
     } else {
-      current.scrollLeft += 300
+      current.scrollBy({ left: delta, behavior: 'smooth' })
     }
   }
 
@@ -35,8 +41,8 @@ const Gallery = () => {
         <h1 className='headtext__cormorant'>Photo Gallery</h1>
 
         <p className='p__opensans' style={{ color: '#AAA', marginTop: '2rem' }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-          mattis ipsum turpis elit elit scelerisque egestas mu.
+          A glimpse into our signature dishes, seasonal drinks, and the warm,
+          elegant atmosphere guests come back for.
         </p>
 
         <button type='button' className='custom__button'>
@@ -50,20 +56,26 @@ const Gallery = () => {
             <div
               className='app__gallery-images_card flex__center'
               key={`gallery_image-${index}`}>
-              <img src={image} alt='gallery' />
-              <BsInstagram className='gallery__image-icon' />
+              <img src={image} alt={`Gallery item ${index + 1}`} loading='lazy' />
+              <BsInstagram className='gallery__image-icon' aria-hidden='true' />
             </div>
           ))}
         </div>
         <div className='app__gallery-images_arrows'>
-          <BsArrowLeftShort
-            className='gallery__arrow-icon'
-            onClick={() => scroll('left')}
-          />
-          <BsArrowRightShort
-            className='gallery__arrow-icon'
-            onClick={() => scroll('right')}
-          />
+          <button
+            type='button'
+            className='gallery__arrow-button'
+            aria-label='Scroll gallery left'
+            onClick={() => scroll('left')}>
+            <BsArrowLeftShort className='gallery__arrow-icon' />
+          </button>
+          <button
+            type='button'
+            className='gallery__arrow-button'
+            aria-label='Scroll gallery right'
+            onClick={() => scroll('right')}>
+            <BsArrowRightShort className='gallery__arrow-icon' />
+          </button>
         </div>
       </div>
     </div>

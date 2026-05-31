@@ -31,6 +31,22 @@
   width: max-content;
 }
 
+.app__newsletter-status {
+  min-height: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-family: var(--font-alt);
+  font-size: 0.95rem;
+}
+
+.app__newsletter-status--error {
+  color: #ff9c9c;
+}
+
+.app__newsletter-status--success {
+  color: #88e0a5;
+}
+
 @media screen and (min-width: 2000px) {
     .app__newsletter-input input {
         font-size: 2rem;

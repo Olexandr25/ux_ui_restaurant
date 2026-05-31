@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs'
-import { meal } from '../../constants'
+import { meal, images } from '../../constants'
 import './Intro.css'
 
 const Intro = () => {
@@ -8,20 +8,33 @@ const Intro = () => {
   const videoRef = useRef()
 
   const handleVideo = () => {
-    setPlayVideo(prev => !prev)
+    if (!videoRef.current) {
+      return
+    }
 
     if (playVideo) {
       videoRef.current.pause()
+      setPlayVideo(false)
     } else {
       videoRef.current.play()
+      setPlayVideo(true)
     }
   }
+
+  useEffect(() => () => {
+    if (videoRef.current) {
+      videoRef.current.pause()
+    }
+  }, [])
 
   return (
     <div className='app__video' id='intro'>
       <video
         src={meal}
         typeof='video/mp4'
+        preload='metadata'
+        playsInline
+        poster={images.gallery01}
         loop
         controls={false}
         muted
@@ -29,15 +42,17 @@ const Intro = () => {
       />
 
       <div className='app__video-overlay flex__center'>
-        <div
+        <button
+          type='button'
           className='app__video-overlay_circle flex__center'
+          aria-label={playVideo ? 'Pause background video' : 'Play background video'}
           onClick={handleVideo}>
           {playVideo ? (
             <BsPauseFill color='#fff' fontSize={30} />
           ) : (
             <BsFillPlayFill color='#fff' fontSize={30} />
           )}
-        </div>
+        </button>
       </div>
     </div>
   )
